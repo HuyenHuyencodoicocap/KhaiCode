@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .video-container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        background: white;
+        padding: 10px;
+        margin-right: 50px;
+        margin-top: 50px;
+    }
+</style>
+
+<body style=" background-image: url('background.jpg');">
+
+    < <h1 id="h1" style="text-align: left;font-size: 40px; margin-left: 150px; color: white;">Cin chào tết 2025</h1>
+        <div style="display: flex; justify-content: left; margin-left: 50px;  ">
+            <img id="slideshow" src="index2.jpg" alt="" style="height: 600px;width: 500px;transition: opacity 1s ease-in-out;">
+        </div>
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rfp3W8S0VFc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+
+
+
+</body>
+<script>
+    let images = ["index2.jpg", "index3.jpg", "index4.jpg"];
+    let index = 0;
+
+    function changeImage() {
+        const slideshow = document.getElementById("slideshow");
+
+        slideshow.style.opacity = 0;
+
+        setTimeout(() => {
+            index = (index + 1) % images.length; 
+            slideshow.src = images[index];
+
+            slideshow.style.opacity = 1;
+        }, 1000); 
+    }
+
+    setInterval(changeImage, 3000); 
+
+</script>
+
+</html>
